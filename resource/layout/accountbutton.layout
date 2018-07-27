@@ -1,0 +1,150 @@
+"resource/layout/accountbutton.layout"
+{
+	controls
+	{
+		account_avatar
+		{
+			"ControlName"	"Image"
+			"fieldName"		"account_avatar"
+			"zpos" 			"-2" // behind dropdown button
+		}
+
+		account_drop_down
+		{
+			"ControlName"	"Label"
+			"fieldName"		"account_drop_down"
+			"zpos" 			"-2" // behind dropdown button
+			"style"			"AccountDropDownStyleOffline"
+		}
+
+
+		account_balance
+		{
+			"ControlName"	"Label"
+			"fieldName"		"account_balance"
+			"style"			"AccountBalanceStyle"
+			
+			"zpos" 			"-2" // behind dropdown button
+		}
+
+		account_persona
+		{
+			"ControlName"	"Label"
+			"fieldName"		"account_persona"
+			"style" 		"AccountPersonaStyleOffline"
+			"labelText"		"%persona%"
+			"zpos" 			"-2" // behind dropdown button
+		}
+
+		account_menu_button
+		{
+			"ControlName"	"Button"
+			"fieldName"		"account_menu_button"
+			"labelText"		""
+			"style" 		"AccountMenuButtonStyle"
+		}
+	}
+
+	styles
+	{
+		AccountPersonaStyleOffline
+		{
+			padding-right=6
+			padding-left=12
+			textcolor=Friends_Offline
+		}
+
+		AccountPersonaStyleOnline
+		{
+			padding-right=6
+			padding-left=12
+			textcolor=Friends_Online
+			render_bg
+		  	{
+				0="fill( x0, y0 - 1, x0 + 2, y1 + 1, Friends_Online )"
+			}
+		}
+
+		AccountPersonaStyleInGame
+		{
+			padding-right=6
+			padding-left=12
+			textcolor=Friends_InGame
+			render_bg
+		  	{
+				0="fill( x0, y0 - 1, x0 + 2, y1 + 1, Friends_InGame )"
+			}
+		}
+		AccountDropDownStyleOffline
+		{
+			bgcolor=Friends_Offline
+			render
+		  	{
+				0="fill( x0, y0, x1+400, y0+2, Friends_Offline )"
+			}
+		}
+		AccountDropDownStyleOnline
+		{
+			bgcolor=Friends_Online
+			render
+		  	{
+				0="fill( x0, y0, x1+400, y0+2, Friends_Online )"
+			}
+		}
+		AccountDropDownStyleInGame
+		{
+			bgcolor=Friends_InGame
+		}
+
+		AccountButtonStyle
+		{
+			bgcolor=none
+		}
+
+		AccountButtonStyle:hover
+		{
+			bgcolor=white05
+		}
+
+		AccountBalanceStyle
+		{
+			textcolor=white75
+			bgcolor="none"
+			font-family=basefont
+			font-size=14
+			font-weight=400
+			font-style=regular
+			padding-right=8
+		}
+		AccountBalanceStyle:hover
+		{
+			textcolor=white
+			bgcolor=white05
+		}
+
+		AccountMenuButtonStyle
+		{
+			bgcolor=none
+		}
+		AccountMenuButtonStyle:hover
+		{
+			bgcolor=White05
+		}
+		AccountMenuButtonStyle:active
+		{
+			bgcolor=White10
+		}
+	}
+
+	layout
+	{
+		place { control="account_balance" y=8 height=24 align=right }
+		
+
+		//Hidden
+		place { control="account_menu_button" margin-left=-999 }
+		place { control="account_drop_down" margin-left=-999  }
+		place { control="account_avatar" y=8 width=24 height=24 end-right=account_persona margin-left=-999}
+		place { control="account_persona" y=8 height=24  margin-left=-999 }
+	}
+}
